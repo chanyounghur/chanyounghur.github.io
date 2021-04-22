@@ -1,12 +1,39 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>야빵이</title>
+    <meta charset="utf-8" />
+    <title>상희생일 알리미</title>
+    <script type="text/javascript">
+      window.onload = function () {
+        var countDownDate = new Date(
+          "Thu Nov 18 2021 00:00:00 GMT+0900"
+        ).getTime(); //1초마다 갱신되도록 함수 생성,실행
+        var x = setInterval(function () {
+          // 오늘 날짜 등록
+          var now = new Date().getTime(); // 종료일자에서 현재일자를 뺀 시간
+          var distance = countDownDate - now; // 각 변수에 일, 시, 분, 초를 등록
+          var d = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var h = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var s = Math.floor((distance % (1000 * 60)) / 1000); //id가 d-day인 HTML코드에 내용 삽입
+          document.getElementById("anni").innerHTML =
+            "상희 생일까지 " +
+            d +
+            "일 " +
+            h +
+            "시간 " +
+            m +
+            "분 " +
+            s +
+            "초 남았습니다.";
+        });
+      };
+    </script>
   </head>
   <body>
-    하이
-    <h1>하이하이</h1>
-    <img
-      src="https://pbs.twimg.com/profile_images/1295782966367367168/GJZu2cH__400x400.jpg"
-    />
+    <h1>상희생일까지</h1>
+    <span id="anni" style=""> </span>
   </body>
 </html>
