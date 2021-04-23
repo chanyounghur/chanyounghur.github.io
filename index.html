@@ -2,38 +2,46 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <link rel="shortcut icon" href="favicon.ico" />
     <title>상희생일 알리미</title>
+    <meta name="title" content="상희생일 알리미" />
+    <meta property="og:site_name" content="상희생일 알리미" />
+    <meta name="description" content="상희는 최고야" />
+    <meta property="og:description" content="상희는 최고야" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://chanyounghur.github.io/preview.png"
+    />
     <script type="text/javascript">
       window.onload = function () {
-        var countDownDate = new Date(
-          "Thu Nov 18 2021 00:00:00 GMT+0900"
-        ).getTime(); //1초마다 갱신되도록 함수 생성,실행
-        var x = setInterval(function () {
+        let countDownDate = new Date(2021, 10, 18).getTime(); //1초마다 갱신되도록 함수 생성,실행
+        let x = setInterval(function () {
           // 오늘 날짜 등록
-          var now = new Date().getTime(); // 종료일자에서 현재일자를 뺀 시간
-          var distance = countDownDate - now; // 각 변수에 일, 시, 분, 초를 등록
-          var d = Math.floor(distance / (1000 * 60 * 60 * 24));
-          var h = Math.floor(
+          let now = new Date().getTime(); // 종료일자에서 현재일자를 뺀 시간
+          let distance = countDownDate - now; // 각 변수에 일, 시, 분, 초를 등록
+          let day = Math.floor(distance / (1000 * 60 * 60 * 24));
+          let hour = Math.floor(
             (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
           );
-          var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-          var s = Math.floor((distance % (1000 * 60)) / 1000); //id가 d-day인 HTML코드에 내용 삽입
+          let minute = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          let second = Math.floor((distance % (1000 * 60)) / 1000); //id가 d-day인 HTML코드에 내용 삽입
           document.getElementById("anni").innerHTML =
             "상희 생일까지 " +
-            d +
+            day +
             "일 " +
-            h +
+            hour +
             "시간 " +
-            m +
+            minute +
             "분 " +
-            s +
+            second +
             "초 남았습니다.";
         });
       };
     </script>
   </head>
   <body>
-    <h1>상희생일까지</h1>
+    <h1>상희생일 알리미</h1>
     <span id="anni" style=""> </span>
   </body>
 </html>
