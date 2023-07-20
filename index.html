@@ -15,7 +15,8 @@
     />
     <script type="text/javascript">
       window.onload = function () {
-        let countDownDate = new Date(2022, 10, 18).getTime(); //1초마다 갱신되도록 함수 생성,실행
+        let nowYear = new Date().getFullYear()
+        let countDownDate = new Date(nowYear, 10, 18).getTime(); //1초마다 갱신되도록 함수 생성,실행
         let x = setInterval(function () {
           // 오늘 날짜 등록
           let now = new Date().getTime(); // 종료일자에서 현재일자를 뺀 시간
